@@ -34,7 +34,9 @@ npm install -g allure-commandline
 ## How to run the tests
 
 // TODO
+npx playwright test
 
 ## How to generate report
 
 // TODO
+npx playwright test --reporter=html

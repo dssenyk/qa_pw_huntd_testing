@@ -1,0 +1,47 @@
+{
+  "name": "qa_pw_huntd_testing",
+  "version": "1.0.0",
+  "description": "To see the description of the task assignment [follow the link](https://github.com/mate-academy/qa_pw_huntd_testing/blob/main/TaskDescription.md).",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "test-staging": "ENV_TYPE=staging npx playwright test",
+    "test-staging-ui": "ENV_TYPE=staging npx playwright test --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dssenyk/qa_pw_huntd_testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dssenyk/qa_pw_huntd_testing/issues"
+  },
+  "homepage": "https://github.com/dssenyk/qa_pw_huntd_testing#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.4.0",
+    "allure-playwright": "^3.4.1",
+    "dotenv": "^17.2.2",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-playwright": "^2.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.4.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
