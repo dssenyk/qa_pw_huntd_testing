@@ -1,4 +1,5 @@
-import * as fs from 'fs';
+import fs from 'fs';
+import dotenv from 'dotenv';
 
 export function loadEnvFile(envType) {
   const envFolderPath = './env';
@@ -8,11 +9,11 @@ export function loadEnvFile(envType) {
     throw new Error(`Missing the config file ${envFilePath}`);
   }
 
-  require('dotenv').config({ path: envFilePath, silent: true });
+  dotenv.config({ path: envFilePath });
 }
 
-export function throwMissinEnvTypeError() {
+export function throwMissingEnvTypeError() {
   throw new Error(
-    'The ENV_TYPE is undefined. Check the ENV_TYPE env variable is set.',
+    'The ENV_TYPE is undefined. Check the ENV_TYPE env variable is set.'
   );
 }
